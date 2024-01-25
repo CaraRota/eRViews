@@ -7,7 +7,7 @@ const Header = () => {
     const citizenID = 6872100;
     return (
         <>
-            <div>
+            <div className='pb-5 border-b'>
                 <div>
                     <img
                         className='h-32 w-full object-cover lg:h-48'
@@ -25,9 +25,9 @@ const Header = () => {
                             />
                         </div>
                         <div className='mt-6 sm:flex sm:min-w-0 sm:flex-1 sm:items-center sm:justify-end sm:space-x-6 sm:pb-1'>
-                            <div className='mt-6 min-w-0 flex-1 sm:hidden md:block'>
+                            <div className='mt-6 min-w-0 flex-1 md:block'>
                                 <h1 className='truncate text-slate-700 text-4xl font-bold'>
-                                    eRepublik price checker
+                                    eR Views
                                 </h1>
                             </div>
                             <div className='mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-x-4 sm:space-y-0'>
@@ -62,11 +62,6 @@ const Header = () => {
                                 </a>
                             </div>
                         </div>
-                    </div>
-                    <div className='mt-6 hidden min-w-0 flex-1 sm:block md:hidden'>
-                        <h1 className='truncate text-2xl font-bold text-blue-300'>
-                            eRepublik price checker
-                        </h1>
                     </div>
                 </div>
             </div>

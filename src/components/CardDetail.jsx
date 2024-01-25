@@ -18,7 +18,7 @@ const CardDetail = ({ item, index }) => {
                         Price: ${item.gross.toFixed(2)}
                     </h3>
                     {item.amount < 10 ? (
-                        <p className='text-red-500 text-base'>
+                        <p className='text-pink-700 text-base'>
                             Quantity: {item.amount}
                             <WarningIcon />
                         </p>
@@ -34,7 +34,7 @@ const CardDetail = ({ item, index }) => {
                         href={`https://www.erepublik.com/en/economy/marketplace/offer/${item.id}`}
                         target='_blank'
                         rel='noopener noreferrer'
-                        className='bg-emerald-700 hover:bg-emerald-500 text-zinc-50 font-bold py-2 px-4 rounded-md'>
+                        className='bg-emerald-800 hover:bg-emerald-700 text-zinc-50 font-bold py-2 px-4 rounded-md'>
                         Buy now!
                     </a>
                 </div>
