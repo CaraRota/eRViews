@@ -20,7 +20,9 @@ const Card = ({ apiUrl, quality = null }) => {
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': 'https://erviews.netlify.app',
+                
             },
+        });
                 const slicedData = response.data.offers.slice(0, slice);
                 const industry = response.data.info.industry.name;
                 const id = response.data.info.industry.id;
