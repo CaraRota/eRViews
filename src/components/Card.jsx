@@ -11,13 +11,13 @@ const Card = ({ apiUrl, quality = null }) => {
     const [loading, setLoading] = useState(true);
 
     const serverlessProxy = "https://serverless-proxy-cywlp49zd.vercel.app/";
-    const baseUrl = "https://thingproxy.freeboard.io/fetch/";
+    // const baseUrl = "https://thingproxy.freeboard.io/fetch/";
     const slice = 3;
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`${serverlessProxy + baseUrl + apiUrl}`);
+                const response = await axios.get(`${serverlessProxy + apiUrl}`);
                 const slicedData = response.data.offers.slice(0, slice);
                 const industry = response.data.info.industry.name;
                 const id = response.data.info.industry.id;
