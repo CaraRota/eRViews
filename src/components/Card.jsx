@@ -10,14 +10,14 @@ const Card = ({ apiUrl, quality = null }) => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const baseUrl = "https://thingproxy.freeboard.io/fetch/";
+    // const baseUrl = "https://thingproxy.freeboard.io/fetch/";
     const slice = 3;
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(
-                    `${baseUrl + apiUrl}`,
+                    apiUrl,
                     {
                         crossdomain: true,
                     },
