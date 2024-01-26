@@ -2,16 +2,22 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Homepage from "./components/Homepage";
 
-//Tailwind
-import "tailwindcss/tailwind.css";
+//RRD
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Calculator from "./components/calculator/Calculator";
+import Calculate from "./components/calculator/Calculate";
 
 function App() {
     return (
         <>
-            <div className='absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]'>
+            <Router>
                 <Navbar />
-                <Homepage />
-            </div>
+                <Routes>
+                    <Route path='/' element={<Homepage />} />
+                    <Route path='/calculator' element={<Calculator />} />
+                    <Route path='/calculate' element={<Calculate />} />
+                </Routes>
+            </Router>
         </>
     );
 }

@@ -2,6 +2,9 @@ import React from "react";
 import CountryFlag from "./CountryFlag";
 import WarningIcon from "./ui/WarningIcon";
 import OkIcon from "./ui/OkIcon";
+import CalculatorIcon from "./ui/CalculatorIcon";
+
+import { Link } from "react-router-dom";
 
 const CardDetail = ({ item, index }) => {
     return (
@@ -14,8 +17,14 @@ const CardDetail = ({ item, index }) => {
                 />
 
                 <div className='flex-1'>
-                    <h3 className='text-lg font-medium text-gray-800'>
+                    <h3 className='text-lg font-medium text-gray-800 flex flex-row items-center gap-3'>
                         Price: ${item.gross.toFixed(2)}
+                        {/* <Link
+                            to={"/calculate"}
+                            state={item.gross}
+                            className='text-gray-500 hover:text-gray-700'>
+                            <CalculatorIcon />
+                        </Link> */}
                     </h3>
                     {item.amount < 10 ? (
                         <p className='text-pink-700 text-base'>
