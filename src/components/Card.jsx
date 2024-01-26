@@ -10,25 +10,14 @@ const Card = ({ apiUrl, quality = null }) => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    // const baseUrl = "https://thingproxy.freeboard.io/fetch/";
+    const serverlessProxy = "https://serverless-proxy-cywlp49zd.vercel.app/";
+    const baseUrl = "https://thingproxy.freeboard.io/fetch/";
     const slice = 3;
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(
-                    apiUrl,
-                    {
-                        crossdomain: true,
-                    },
-                    {
-                        headers: {
-                            "Access-Control-Allow-Origin": "*",
-                            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-                            "Content-Type": "application/x-www-form-urlencoded",
-                        },
-                    }
-                );
+                const response = await axios.get(`${serverlessProxy + baseUrl + apiUrl}`);
                 const slicedData = response.data.offers.slice(0, slice);
                 const industry = response.data.info.industry.name;
                 const id = response.data.info.industry.id;
