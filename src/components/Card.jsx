@@ -11,7 +11,7 @@ const Card = ({ apiUrl, quality = null }) => {
     const [loading, setLoading] = useState(true);
 
     const baseUrl = "https://api.allorigins.win/raw?url=";
-    const slice = 3;
+    const slice = 5;
 
     useEffect(() => {
         const fetchData = async () => {
