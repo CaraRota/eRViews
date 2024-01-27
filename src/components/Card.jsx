@@ -6,8 +6,10 @@ import { mapIndustry } from "../utils/dataMapping.js";
 import axios from "axios";
 import Spinner from "./ui/Spinner";
 
-const Card = ({ apiUrl, quality = null }) => {
+const Card = ({ apiUrl, quality = null, gold }) => {
     const [data, setData] = useState(null);
+
+    //Loaders
     const [loading, setLoading] = useState(true);
 
     const baseUrl = "https://api.allorigins.win/raw?url=";
@@ -17,7 +19,6 @@ const Card = ({ apiUrl, quality = null }) => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(`${baseUrl + apiUrl}`);
-                console.log("response data", response.data);
                 const slicedData = response.data.offers.slice(0, slice);
                 const industry = response.data.info.industry.name;
                 const id = response.data.info.industry.id;
@@ -64,7 +65,7 @@ const Card = ({ apiUrl, quality = null }) => {
                         {data &&
                             data.offers.map((item, index) => (
                                 <div key={index}>
-                                    <CardDetail item={item} index={index} />
+                                    <CardDetail item={item} index={index} gold={gold} />
                                 </div>
                             ))}
                     </div>

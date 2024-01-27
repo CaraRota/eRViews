@@ -3,10 +3,16 @@ import CountryFlag from "./CountryFlag";
 import WarningIcon from "./ui/WarningIcon";
 import OkIcon from "./ui/OkIcon";
 import CalculatorIcon from "./ui/CalculatorIcon";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+
+import { Tooltip, Typography } from "@mui/material";
+import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 
 import { Link } from "react-router-dom";
 
-const CardDetail = ({ item, index }) => {
+const CardDetail = ({ item, index, gold }) => {
+    const goldPrice = gold ? gold.price : null;
+
     return (
         <ul>
             <li className='flex items-center py-4 px-6 border-b'>
@@ -38,7 +44,22 @@ const CardDetail = ({ item, index }) => {
                         </p>
                     )}
                 </div>
-                <div className='flex items-center'>
+                <div className='flex items-center flex-col gap-2'>
+                    <Tooltip
+                        className='-ml-0.5 mr-1.5 text-emerald-500 hover:text-emerald-600 text-center'
+                        title={
+                            <>
+                                <Typography color='inherit'>Buyout cost</Typography>
+                                <Typography color='inherit'>
+                                    ${(item.amount * item.gross).toFixed(2)}
+                                </Typography>
+                                <Typography color='inherit'>
+                                    {((item.amount * item.gross) / goldPrice).toFixed(2)} Gold
+                                </Typography>
+                            </>
+                        }>
+                        <CurrencyExchangeIcon />
+                    </Tooltip>
                     <a
                         href={`https://www.erepublik.com/en/economy/marketplace/offer/${item.id}`}
                         target='_blank'
