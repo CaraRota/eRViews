@@ -7,6 +7,7 @@ import EnvelopeIcon from "./ui/EnvelopeIcon";
 
 //RRD
 import { Link } from "react-router-dom";
+import NavbarButton from "./ui/NavbarButton";
 
 const Header = () => {
     const citizenID = 6872100;
@@ -38,36 +39,22 @@ const Header = () => {
                                 </h1>
                             </div>
                             <div className='mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-x-4 sm:space-y-0'>
-                                <Link to='/calculator'>
-                                    <button
-                                        type='button'
-                                        className='inline-flex justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50'>
-                                        <CalculatorIcon />
-                                        <span>Calculator</span>
-                                    </button>
-                                </Link>
-                                <a
-                                    href={`https://www.erepublik.com/en/main/messages-compose/${citizenID}`}
-                                    target='_blank'
-                                    rel='noreferrer'>
-                                    <button
-                                        type='button'
-                                        className='inline-flex justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50'>
-                                        <EnvelopeIcon />
-                                        <span>Message</span>
-                                    </button>
-                                </a>
-                                <a
-                                    href={`https://www.erepublik.com/en/economy/donate-money/${citizenID}`}
-                                    target='_blank'
-                                    rel='noreferrer'>
-                                    <button
-                                        type='button'
-                                        className='inline-flex justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50'>
-                                        <CoinIcon />
-                                        <span>Donate</span>
-                                    </button>
-                                </a>
+                                <NavbarButton link='/calculator' text={"Calculator"}>
+                                    <CalculatorIcon />
+                                </NavbarButton>
+
+                                <NavbarButton
+                                    link={`https://www.erepublik.com/en/main/messages-compose/${citizenID}`}
+                                    text={"Message"}
+                                    target={true}>
+                                    <EnvelopeIcon />
+                                </NavbarButton>
+                                <NavbarButton
+                                    link={`https://www.erepublik.com/en/economy/donate-money/${citizenID}`}
+                                    text={"Donate"}
+                                    target={true}>
+                                    <CoinIcon />
+                                </NavbarButton>
                             </div>
                         </div>
                     </div>

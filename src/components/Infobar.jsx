@@ -1,21 +1,21 @@
 import React from "react";
+import LinkOutlinedIcon from "@mui/icons-material/LinkOutlined";
 
-const Infobar = ({ gold }) => {
+const Infobar = ({ title, price, image, amount, link }) => {
     return (
         <>
-            <h1 className='rounded-md text-3xl font-semibold text-gray-800 text-center'>
-                Gold Price
-            </h1>
+            <h1 className='rounded-md text-3xl font-semibold text-gray-800 text-center'>{title}</h1>
             <div className='flex gap-2'>
-                <p className='text-gray-800 text-xl'>{gold.price.toFixed(2)}</p>
-                <img
-                    src='https://www.erepublik.net/images/modules/_icons/gold_24.png'
-                    alt='gold'
-                    className='mx-auto'
-                />
+                <p className='text-gray-800 text-xl'>{price}</p>
+                <img src={image} alt='gold' className='mx-auto' />
             </div>
-            <p className='text-gray-800'>{gold.amount} available</p>
-            {/* <p className='text-gray-800'>{gold.citizen_name}</p> */}
+            <p className='text-gray-800'>{amount}</p>
+            <p className='text-cyan-500 hover:text-cyan-600'>
+                <a href={link} target='_blank'>
+                    <LinkOutlinedIcon />
+                    Link
+                </a>
+            </p>
         </>
     );
 };

@@ -2,40 +2,64 @@ import React, { useState, useEffect } from "react";
 import Infobar from "./Infobar";
 import Card from "./Card";
 
+import workIcon from "../assets/work-icon.png";
 import Spinner from "./ui/Spinner";
 
 import axios from "axios";
 
 const Homepage = () => {
-    const [goldLoading, setGoldLoading] = useState(true);
     const [gold, setGold] = useState(null);
+    const [jobs, setJobs] = useState(null);
 
     const baseUrl = "https://api.allorigins.win/raw?url=";
     const goldApi = "https://service.erepublik.tools/api/v1/market/gold";
+    const jobsApi = "https://service.erepublik.tools/api/v1/market/job/0";
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const goldResponse = await axios.get(`${baseUrl + goldApi}`);
+                const jobsResponse = await axios.get(`${baseUrl + jobsApi}`);
                 setGold(goldResponse.data.offers[0]);
+                setJobs(jobsResponse.data.offers[0]);
             } catch (error) {
                 console.error("Error fetching data:", error);
-            } finally {
-                setGoldLoading(false);
             }
         };
 
         fetchData();
     }, []);
+
     return (
         <>
-            {gold ? (
-                <div className='border-t-amber-300 border-2 mt-5 py-10 px-7 rounded-md shadow-md w-52 h-28 mx-auto flex justify-center items-center flex-col'>
-                    <Infobar gold={gold} />
-                </div>
-            ) : (
-                <Spinner />
-            )}
+            <div className='flex flex-col sm:flex-row sm:flex-wrap mx-auto max-w-screen-lg gap-2'>
+                {jobs ? (
+                    <div className='border-t-pink-700 border-2 mt-5 py-10 px-7 rounded-md shadow-md w-52 h-32 mx-auto flex justify-center items-center flex-col'>
+                        <Infobar
+                            title={"Best Job"}
+                            image={workIcon}
+                            price={`$${jobs.net}`}
+                            amount={`Limit of $${jobs.salary_limit}`}
+                            link={`https://www.erepublik.com/en/economy/job-market/${jobs.country_id}`}
+                        />
+                    </div>
+                ) : (
+                    <Spinner />
+                )}
+                {gold ? (
+                    <div className='border-t-amber-300 border-2 mt-5 py-10 px-7 rounded-md shadow-md w-52 h-32 mx-auto flex justify-center items-center flex-col'>
+                        <Infobar
+                            title={"Gold Price"}
+                            image={"https://www.erepublik.net/images/modules/_icons/gold_24.png"}
+                            price={gold.price.toFixed(2)}
+                            amount={`${gold.amount} available`}
+                            link={`https://www.erepublik.com/en/economy/exchange-market/${gold.id}`}
+                        />
+                    </div>
+                ) : (
+                    <Spinner />
+                )}
+            </div>
             <div className='flex flex-wrap mx-auto max-w-screen-lg gap-2'>
                 <Card
                     apiUrl={"https://service.erepublik.tools/api/v1/market/item/0/7/1"}

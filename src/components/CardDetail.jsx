@@ -34,8 +34,20 @@ const CardDetail = ({ item, index, gold }) => {
                     </h3>
                     {item.amount < 10 ? (
                         <p className='text-pink-700 text-base'>
-                            Quantity: {item.amount}
-                            <WarningIcon />
+                            <Tooltip
+                                placement='bottom'
+                                title={
+                                    <div className='text-center'>
+                                        <Typography color='inherit'>Careful!</Typography>
+                                        <Typography color='inherit'>
+                                            This item is low in stock
+                                        </Typography>
+                                    </div>
+                                }
+                                arrow>
+                                Quantity: {item.amount}
+                                <WarningIcon />
+                            </Tooltip>
                         </p>
                     ) : (
                         <p className='text-gray-600 text-base'>
@@ -46,9 +58,11 @@ const CardDetail = ({ item, index, gold }) => {
                 </div>
                 <div className='flex items-center flex-col gap-2'>
                     <Tooltip
-                        className='-ml-0.5 mr-1.5 text-emerald-500 hover:text-emerald-600 text-center'
+                        className='text-emerald-500 hover:text-emerald-600 text-center'
+                        placement='top'
+                        arrow
                         title={
-                            <>
+                            <div className='px-5 text-center'>
                                 <Typography color='inherit'>Buyout cost</Typography>
                                 <Typography color='inherit'>
                                     ${(item.amount * item.gross).toFixed(2)}
@@ -56,7 +70,7 @@ const CardDetail = ({ item, index, gold }) => {
                                 <Typography color='inherit'>
                                     {((item.amount * item.gross) / goldPrice).toFixed(2)} Gold
                                 </Typography>
-                            </>
+                            </div>
                         }>
                         <CurrencyExchangeIcon />
                     </Tooltip>
