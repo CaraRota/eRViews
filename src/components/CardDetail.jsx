@@ -33,7 +33,7 @@ const CardDetail = ({ item, index, gold }) => {
                         </Link> */}
                     </h3>
                     {item.amount < 10 ? (
-                        <p className='text-pink-700 text-base'>
+                        <>
                             <Tooltip
                                 placement='bottom'
                                 title={
@@ -45,10 +45,12 @@ const CardDetail = ({ item, index, gold }) => {
                                     </div>
                                 }
                                 arrow>
-                                Quantity: {item.amount}
-                                <WarningIcon />
+                                <p className='text-pink-700 text-base'>
+                                    Quantity: {item.amount}
+                                    <WarningIcon />
+                                </p>
                             </Tooltip>
-                        </p>
+                        </>
                     ) : (
                         <p className='text-gray-600 text-base'>
                             Quantity: {item.amount}

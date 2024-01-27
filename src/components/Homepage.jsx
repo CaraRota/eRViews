@@ -33,27 +33,27 @@ const Homepage = () => {
     return (
         <>
             <div className='flex flex-col sm:flex-row sm:flex-wrap mx-auto max-w-screen-lg gap-2'>
-                {jobs ? (
-                    <div className='border-t-pink-700 border-2 mt-5 py-10 px-7 rounded-md shadow-md w-52 h-32 mx-auto flex justify-center items-center flex-col'>
-                        <Infobar
-                            title={"Best Job"}
-                            image={workIcon}
-                            price={`$${jobs.net}`}
-                            amount={`Limit of $${jobs.salary_limit}`}
-                            link={`https://www.erepublik.com/en/economy/job-market/${jobs.country_id}`}
-                        />
-                    </div>
-                ) : (
-                    <Spinner />
-                )}
                 {gold ? (
-                    <div className='border-t-amber-300 border-2 mt-5 py-10 px-7 rounded-md shadow-md w-52 h-32 mx-auto flex justify-center items-center flex-col'>
+                    <div className='border-t-amber-300 bg-amber-50 border-2 mt-5 py-10 px-7 rounded-md shadow-md w-52 h-32 mx-auto flex justify-center items-center flex-col'>
                         <Infobar
                             title={"Gold Price"}
                             image={"https://www.erepublik.net/images/modules/_icons/gold_24.png"}
                             price={gold.price.toFixed(2)}
                             amount={`${gold.amount} available`}
                             link={`https://www.erepublik.com/en/economy/exchange-market/${gold.id}`}
+                        />
+                    </div>
+                ) : (
+                    <Spinner />
+                )}
+                {jobs ? (
+                    <div className='border-t-pink-700 bg-pink-50 border-2 mt-5 py-10 px-7 rounded-md shadow-md w-52 h-32 mx-auto flex justify-center items-center flex-col'>
+                        <Infobar
+                            title={"Best Job"}
+                            image={workIcon}
+                            price={`$${jobs.net}`}
+                            amount={`Limit of $${jobs.salary_limit}`}
+                            link={`https://www.erepublik.com/en/economy/job-market/${jobs.country_id}`}
                         />
                     </div>
                 ) : (
