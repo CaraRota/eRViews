@@ -1,43 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import CardDetail from "./CardDetail";
 
 import { mapIndustry } from "../utils/dataMapping.js";
-
-import axios from "axios";
 import Spinner from "./ui/Spinner";
 
-const Card = ({ apiUrl, quality = null, gold }) => {
-    const [data, setData] = useState(null);
+import { useApi } from "../context/apiContext";
 
-    //Loaders
-    const [loading, setLoading] = useState(true);
-
-    const baseUrl = "https://api.allorigins.win/raw?url=";
-    const slice = 5;
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get(`${baseUrl + apiUrl}`);
-                const slicedData = response.data.offers.slice(0, slice);
-                const industry = response.data.info.industry.name;
-                const id = response.data.info.industry.id;
-                const dataWithIndustry = {
-                    id,
-                    industry,
-                    offers: slicedData,
-                };
-
-                setData(dataWithIndustry);
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchData();
-    }, []);
+const Card = ({ data, quality = null }) => {
+    const { gold, loading, slice } = useApi();
 
     return (
         <>
