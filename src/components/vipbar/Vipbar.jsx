@@ -1,53 +1,15 @@
 import React from "react";
 
-import Slider from "react-slick";
 import VipbarDetail from "./VipbarDetail";
 
 const Vipbar = ({ gold, frm, wrm, hrm, arm }) => {
-    const carouselSettings = {
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        autoplay: true,
-        speed: 3000,
-        autoplaySpeed: 3000,
-        cssEase: "linear",
-        className: "center",
-        arrows: false,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                },
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2,
-                },
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                },
-            },
-        ],
-    };
-
     return (
         <>
-            <div className='text-center truncate text-slate-700 text-2xl font-bold'>
-                Vip Shop Prices
-            </div>
-            <div className='mx-auto max-w-screen-lg'>
-                <Slider {...carouselSettings}>
+            <div className='flex flex-col mx-auto w-11/12 lg:max-w-screen-lg gap-2 py-5 bg-gradient-to-b from-purple-100 to-purple-200 border-purple-300 mt-5 rounded-md border '>
+                <div className='text-center truncate text-purple-400 text-2xl font-bold'>
+                    Vip Shop Prices
+                </div>
+                <div className='flex flex-row flex-wrap gap-2 justify-center items-center'>
                     <VipbarDetail
                         image={"https://www.erepublik.com/images/icons/boosters/128px/speed.png"}
                         alt={"2x Damage Accelerator Icon"}
@@ -177,7 +139,7 @@ const Vipbar = ({ gold, frm, wrm, hrm, arm }) => {
                         data={arm}
                         amount={10}
                     />
-                </Slider>
+                </div>
             </div>
         </>
     );
