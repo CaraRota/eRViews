@@ -15,7 +15,7 @@ const VipbarDetail = ({ image, alt, text, data, amount, gold = null, cc = null }
                         <img src={image} alt={alt} className='mx-auto size-8' />
                         <div className='text-gray-800 text-md'>
                             {cc
-                                ? `$${cc.toFixed(2)}`
+                                ? `$${cc}`
                                 : `$${parseInt(
                                       amount * (gold ? data.price : data.offers[0].gross)
                                   )}`}
