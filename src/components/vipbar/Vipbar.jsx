@@ -23,8 +23,8 @@ const Vipbar = ({ gold, frm, wrm, hrm, arm }) => {
     };
     return (
         <>
-            <div className='flex flex-col mx-auto w-11/12 lg:max-w-screen-lg gap-2 py-5 bg-gradient-to-b from-purple-100 to-purple-200 border-purple-300 mt-5 rounded-md border '>
-                <div className='text-center truncate text-purple-400 text-2xl font-bold'>
+            <div className='flex flex-col mx-auto w-11/12 lg:max-w-screen-lg gap-2 py-5 bg-gradient-to-b from-zinc-100 to-zinc-200 border-zinc-300 mt-5 rounded-md border '>
+                <div className='text-center truncate text-zinc-400 text-2xl font-bold'>
                     Vip Shop Prices
                 </div>
                 <div className='flex flex-row flex-wrap gap-2 justify-center items-center'>
