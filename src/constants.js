@@ -19,7 +19,7 @@ export const VIPBAR = [
         alt: "Storage Icon",
         text: "+1000 Storage",
         data: "frm",
-        amount: 45,
+        amount: 46,
     },
     {
         image: "https://www.erepublik.com/images/icons/industry/1/q10_128x128.png",
@@ -34,7 +34,7 @@ export const VIPBAR = [
         alt: "Ghost Booster Icon",
         text: "Ghost Booster",
         data: "wrm",
-        amount: 51,
+        amount: 52,
     },
     {
         image: "https://www.erepublik.com/images/icons/industry/1/q11_128x128.png",
@@ -63,14 +63,14 @@ export const VIPBAR = [
         alt: "+10% Ground Rank Points Icon",
         text: "+10% Ground Rank Points",
         data: "wrm",
-        amount: 129,
+        amount: 131,
     },
     {
         image: "https://www.erepublik.com/images/icons/rewards/128px/storage.png",
         alt: "+9000 Storage Icon",
         text: "+9000 Storage",
         data: "wrm",
-        amount: 238,
+        amount: 242,
     },
     {
         image: "https://www.erepublik.com/images/icons/boosters/128px/air_damage.png",
@@ -84,7 +84,7 @@ export const VIPBAR = [
         alt: "+100% Ground Damage Icon",
         text: "+100% Ground Damage",
         data: "wrm",
-        amount: 156,
+        amount: 159,
     },
     {
         image: "https://www.erepublik.com/images/icons/boosters/128px/deploy_rank_air.png",
@@ -105,7 +105,7 @@ export const VIPBAR = [
         alt: "+20% Ground Rank Points Icon",
         text: "+20% Ground Rank Points",
         data: "wrm",
-        amount: 306,
+        amount: 312,
     },
     {
         image: "https://www.erepublik.com/images/icons/boosters/128px/air_damage.png",

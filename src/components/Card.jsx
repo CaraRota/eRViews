@@ -26,7 +26,7 @@ const Card = ({ data, quality = null }) => {
                                 <div>
                                     <h2>Top {slice}</h2>
                                     <h3 className='text-xl font-semibold text-gray-800'>
-                                        {mapIndustry[data.industry]}{" "}
+                                        {mapIndustry[data.industry]}
                                         {quality ? `Q${quality}` : null} prices
                                     </h3>
                                 </div>

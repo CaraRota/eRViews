@@ -1,26 +1,8 @@
 import React from "react";
-
 import VipbarDetail from "./VipbarDetail";
 import { VIPBAR } from "../../constants";
 
-const Vipbar = ({ gold, frm, wrm, hrm, arm }) => {
-    const getData = (data) => {
-        if (!data) return null;
-        switch (data) {
-            case "gold":
-                return gold;
-            case "frm":
-                return frm;
-            case "wrm":
-                return wrm;
-            case "hrm":
-                return hrm;
-            case "arm":
-                return arm;
-            default:
-                return true;
-        }
-    };
+const Vipbar = () => {
     return (
         <>
             <div className='flex flex-col mx-auto w-11/12 lg:max-w-screen-lg gap-2 py-5 bg-gradient-to-b from-zinc-100 to-zinc-200 border-zinc-300 mt-5 rounded-md border '>
@@ -35,7 +17,7 @@ const Vipbar = ({ gold, frm, wrm, hrm, arm }) => {
                                 image={vip.image}
                                 alt={vip.alt}
                                 text={vip.text}
-                                data={getData(vip.data)}
+                                data={vip.data}
                                 amount={vip.amount}
                                 gold={vip.gold}
                                 cc={vip.cc}

@@ -1,18 +1,30 @@
-import React from "react";
-
-import Tooltip from "@mui/material/Tooltip";
+import React, { useMemo } from "react";
 import { useApi } from "../../context/apiContext";
+import Tooltip from "@mui/material/Tooltip";
 
 const VipbarDetail = ({ image, alt, text, data, amount, gold = null, cc = null }) => {
-    const { loading } = useApi();
+    const { loading, pricesData, gold: goldPrice } = useApi();
+
+    const mergedData = useMemo(() => {
+        if (!data) return null;
+        if (cc) return true;
+        if (gold) return goldPrice;
+        else {
+            return pricesData.find((item) => item.industry === data);
+        }
+    }, [pricesData, data]);
 
     return (
         !loading &&
-        data && (
+        mergedData && (
             <Tooltip
                 title={`${text} = ${amount ?? cc} ${
-                    data === true ? "CC" : data.industry ? data.industry.toUpperCase() : "gold"
-                } * $${cc ? cc : gold ? data.price : data.offers[0].gross}`}
+                    mergedData === true
+                        ? "CC"
+                        : mergedData.industry
+                        ? mergedData.industry.toUpperCase()
+                        : "gold"
+                } * $${cc ? cc : gold ? mergedData.price : mergedData.offers[0].gross}`}
                 arrow
                 placement='top'>
                 <div className='border-t-zinc-400 bg-zinc-50 hover:bg-zinc-100 border border-t-2 shadow-sm mt-5 px-2 rounded-lg w-28 h-10 flex flex-col justify-center items-center cursor-pointer'>
@@ -22,7 +34,8 @@ const VipbarDetail = ({ image, alt, text, data, amount, gold = null, cc = null }
                             {cc
                                 ? `$${cc}`
                                 : `$${parseInt(
-                                      amount * (gold ? data.price : data.offers[0].gross)
+                                      amount *
+                                          (gold ? mergedData.price : mergedData.offers[0].gross)
                                   )}`}
                         </div>
                     </div>

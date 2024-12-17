@@ -3,13 +3,11 @@ import Card from "./Card";
 import Infobar from "./Infobar";
 import Vipbar from "./vipbar/Vipbar";
 import Spinner from "./ui/Spinner";
-
 import workIcon from "../assets/work-icon.png";
-
 import { useApi } from "../context/apiContext";
 
 const Homepage = () => {
-    const { loading, gold, jobs, frm, wrm, hrm, arm, weaponQ7, foodQ5 } = useApi();
+    const { loading, gold, jobs, pricesData } = useApi();
 
     return (
         <>
@@ -43,16 +41,13 @@ const Homepage = () => {
             </div>
 
             {/* VIP Bar Section */}
-            {<Vipbar gold={gold} frm={frm} wrm={wrm} hrm={hrm} arm={arm} />}
+            <Vipbar />
 
             {/* Cards Section */}
             <div className='flex flex-wrap mx-auto max-w-screen-lg gap-2'>
-                <Card data={frm} loading={loading} />
-                <Card data={wrm} loading={loading} />
-                <Card data={hrm} loading={loading} />
-                <Card data={arm} loading={loading} />
-                <Card data={weaponQ7} quality={7} loading={loading} />
-                <Card data={foodQ5} quality={5} loading={loading} />
+                {pricesData.map((data, index) => {
+                    return <Card key={index} data={data} loading={loading} />;
+                })}
             </div>
         </>
     );
