@@ -114,4 +114,19 @@ export const VIPBAR = [
         data: "arm",
         amount: 7,
     },
+
+    {
+        image: "https://www.erepublik.com/images/icons/boosters/128px/deploy_influence_air.png",
+        alt: "+10% Air Influence Icon",
+        text: "+10% Air Influence",
+        data: "arm",
+        amount: 5,
+    },
+    {
+        image: "https://www.erepublik.com/images/icons/rewards/128px/vehicle_unenroll_token.png",
+        alt: "Vehicle Discharge Document Icon",
+        text: "Vehicle Discharge Document",
+        data: "hrm",
+        amount: 42,
+    },
 ];
