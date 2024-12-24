@@ -19,7 +19,7 @@ export const VIPBAR = [
         alt: "Storage Icon",
         text: "+1000 Storage",
         data: "frm",
-        amount: 46,
+        amount: 47,
     },
     {
         image: "https://www.erepublik.com/images/icons/industry/1/q10_128x128.png",
@@ -34,7 +34,7 @@ export const VIPBAR = [
         alt: "Ghost Booster Icon",
         text: "Ghost Booster",
         data: "wrm",
-        amount: 52,
+        amount: 53,
     },
     {
         image: "https://www.erepublik.com/images/icons/industry/1/q11_128x128.png",
@@ -63,14 +63,14 @@ export const VIPBAR = [
         alt: "+10% Ground Rank Points Icon",
         text: "+10% Ground Rank Points",
         data: "wrm",
-        amount: 131,
+        amount: 134,
     },
     {
         image: "https://www.erepublik.com/images/icons/rewards/128px/storage.png",
         alt: "+9000 Storage Icon",
         text: "+9000 Storage",
         data: "wrm",
-        amount: 242,
+        amount: 248,
     },
     {
         image: "https://www.erepublik.com/images/icons/boosters/128px/air_damage.png",
@@ -84,7 +84,7 @@ export const VIPBAR = [
         alt: "+100% Ground Damage Icon",
         text: "+100% Ground Damage",
         data: "wrm",
-        amount: 159,
+        amount: 163,
     },
     {
         image: "https://www.erepublik.com/images/icons/boosters/128px/deploy_rank_air.png",
@@ -98,14 +98,14 @@ export const VIPBAR = [
         alt: "5x Damage Accelerators Icon",
         text: "5x Damage Accelerators",
         data: true,
-        cc: 4481,
+        cc: 4483,
     },
     {
         image: "https://www.erepublik.com/images/icons/boosters/128px/deploy_rank_ground.png",
         alt: "+20% Ground Rank Points Icon",
         text: "+20% Ground Rank Points",
         data: "wrm",
-        amount: 312,
+        amount: 319,
     },
     {
         image: "https://www.erepublik.com/images/icons/boosters/128px/air_damage.png",
@@ -120,7 +120,7 @@ export const VIPBAR = [
         alt: "+10% Air Influence Icon",
         text: "+10% Air Influence",
         data: "arm",
-        amount: 5,
+        amount: 7,
     },
     {
         image: "https://www.erepublik.com/images/icons/rewards/128px/vehicle_unenroll_token.png",
