@@ -12,14 +12,14 @@ export const VIPBAR = [
         alt: "Ground Damage Icon",
         text: "+50% Ground Damage",
         data: "frm",
-        amount: 13,
+        amount: 12,
     },
     {
         image: "https://www.erepublik.com/images/icons/rewards/128px/storage.png",
         alt: "Storage Icon",
         text: "+1000 Storage",
         data: "frm",
-        amount: 41,
+        amount: 38,
     },
     {
         image: "https://www.erepublik.com/images/icons/industry/1/q10_128x128.png",
@@ -56,7 +56,7 @@ export const VIPBAR = [
         alt: "+100% Deploy Size Icon",
         text: "+100% Deploy Size",
         data: "frm",
-        amount: 22,
+        amount: 20,
     },
     {
         image: "https://www.erepublik.com/images/icons/boosters/128px/deploy_rank_ground.png",
@@ -98,7 +98,7 @@ export const VIPBAR = [
         alt: "5x Damage Accelerators Icon",
         text: "5x Damage Accelerators",
         data: true,
-        cc: 4495,
+        cc: 4497,
     },
     {
         image: "https://www.erepublik.com/images/icons/boosters/128px/deploy_rank_ground.png",
@@ -127,6 +127,6 @@ export const VIPBAR = [
         alt: "Vehicle Discharge Document Icon",
         text: "Vehicle Discharge Document",
         data: "hrm",
-        amount: 41,
+        amount: 40,
     },
 ];
